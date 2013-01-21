@@ -440,7 +440,7 @@ Install and configure Glance
    [paste_deploy]
    flavor = keystone
 
-* Update the /etc/glance/glance-registry.ini::
+* Update the /etc/glance/glance-registry.conf::
 
    vi /etc/glance/glance-registry.conf
 
