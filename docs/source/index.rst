@@ -143,9 +143,16 @@ Install VLAN, Bridge-Utils, and setup IP Forwarding
 
    apt-get install vlan bridge-utils
 
-* Enable IP_Forwarding by uncommenting net.ipv4.ip_forward=1 in /etc/sysctl.conf::
+* Enable IP_Forwarding 
+  
+    * by uncommenting net.ipv4.ip_forward=1 in /etc/sysctl.conf::
 
-   vi /etc/sysctl.conf
+        vi /etc/sysctl.conf
+
+    * or alternatively, to avoid editing any files::
+
+        echo "net.ipv4.ip_forward=1" > /etc/sysctl.d/99-openstack-ipv4-forwarding.conf
+        service procps start
 
 * Now, run systcl with the updated configuration::
 
@@ -807,9 +814,16 @@ Setup vlan, bridge-utils, and KVM
 
    apt-get install vlan bridge-utils
 
-* Enable IP_Forwarding by uncommenting `net.ipv4.ip_forward=1`::
- 
-   vi /etc/sysctl.conf
+* Enable IP_Forwarding 
+  
+    * by uncommenting net.ipv4.ip_forward=1 in /etc/sysctl.conf::
+
+        vi /etc/sysctl.conf
+
+    * or alternatively, to avoid editing any files::
+
+        echo "net.ipv4.ip_forward=1" > /etc/sysctl.d/99-openstack-ipv4-forwarding.conf
+        service procps start
 
 * Now, run systcl with the updated configuration::
 
